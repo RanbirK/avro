@@ -26,16 +26,16 @@ This is a [Gradle](http://www.gradle.org/) plugin to allow easily performing Jav
     * Java 8-12 support requires Gradle 5.1 or higher (versions lower than 5.1 are no longer supported)
 * Currently built against Gradle 7.6
     * Currently tested against Gradle 5.1-5.6.4 and 6.0-7.6
-* Currently built against Avro 1.11.1
-    * Currently tested against Avro 1.11.0-1.11.1
-    * Avro 1.9.0-1.10.2 were last supported in version 1.2.1 
+* Currently built against Avro 1.11.3
+    * Currently tested against Avro 1.11.0-1.11.2-1.11.3
+    * Avro 1.9.0-1.10.2 were last supported in version 1.2.1
 * Support for Kotlin
     * Dropped integration with the Kotlin plugin in plugin version 1.4.0, as Kotlin 1.7.x would require compile-time dependency on a specific Kotlin version
-      * Wiring between the tasks added by the plugin and the Kotlin compilation tasks can either be added by your build logic, or a derived plugin
-    * Plugin version 1.3.0 was the last version with tested support for Kotlin 
-      * It is believed to work with Kotlin 1.6.x as well
-      * It was tested against Kotlin plugin versions 1.3.20-1.3.72 and 1.4.0-1.4.32 and 1.5.0-1.5.31 using the latest compatible version of Gradle
-      * It was tested against Kotlin plugin versions 1.2.20-1.2.71 and 1.3.0-1.3.11 using Gradle 5.1
+        * Wiring between the tasks added by the plugin and the Kotlin compilation tasks can either be added by your build logic, or a derived plugin
+    * Plugin version 1.3.0 was the last version with tested support for Kotlin
+        * It is believed to work with Kotlin 1.6.x as well
+        * It was tested against Kotlin plugin versions 1.3.20-1.3.72 and 1.4.0-1.4.32 and 1.5.0-1.5.31 using the latest compatible version of Gradle
+        * It was tested against Kotlin plugin versions 1.2.20-1.2.71 and 1.3.0-1.3.11 using Gradle 5.1
     * Kotlin plugin versions 1.4.20-1.4.32 require special settings to work with Java 17+; see [KT-43704](https://youtrack.jetbrains.com/issue/KT-43704#focus=Comments-27-4639603.0-0)
     * Kotlin plugin version 1.3.30 is not compatible with Gradle 7.0+
     * Kotlin plugin versions starting with 1.4.0 require Gradle 5.3+
@@ -232,15 +232,15 @@ avro {
 
 ## additionalVelocityToolClasses
 
-When overriding the default set of Velocity templates provided with Avro, it is often desirable to provide additional tools to use during generation. 
-The class names you provide will be made available for use in your Velocity templates. An instance of each class provided will be created using 
+When overriding the default set of Velocity templates provided with Avro, it is often desirable to provide additional tools to use during generation.
+The class names you provide will be made available for use in your Velocity templates. An instance of each class provided will be created using
 the default constructor (required). When registered, they will be available as $class.simpleName(). Given the example configuration below,
 two tools would be registered, and be available as escape and json.
- 
+
 
 ```groovy
 avro {
-  additionalVelocityToolClasses = ['com.yourpackage.Escape', 'com.yourpackage.JSON']
+    additionalVelocityToolClasses = ['com.yourpackage.Escape', 'com.yourpackage.JSON']
 }
 ```
 
