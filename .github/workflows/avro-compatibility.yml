@@ -19,4 +19,3 @@ jobs:
         with:
           gradle-executable: lang/java/gradle-plugin/gradlew
           arguments: testCompatibility -PavroVersion=${{ matrix.avro }} -PgradleVersion=${{ matrix.gradle }}
-          working-directory: lang/java/gradle-plugin
