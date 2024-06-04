@@ -57,7 +57,7 @@ name = "single"
 apache-avro-derive = { default-features = false, version = "0.17.0", path = "../avro_derive", optional = true }
 bigdecimal = { default-features = false, version = "0.4.3", features = ["std", "serde"] }
 bzip2 = { default-features = false, version = "0.4.4", optional = true }
-crc32fast = { default-features = false, version = "1.4.0", optional = true }
+crc32fast = { default-features = false, version = "1.4.2", optional = true }
 digest = { default-features = false, version = "0.10.7", features = ["core-api"] }
 libflate = { default-features = false, version = "2.1.0", features = ["std"] }
 log = { workspace = true }
@@ -82,7 +82,7 @@ quad-rand = { default-features = false, version = "0.2.1" }
 rand = { default-features = false, version = "0.8.5", features = ["default"] }
 
 [dev-dependencies]
-anyhow = { default-features = false, version = "1.0.83", features = ["std"] }
+anyhow = { default-features = false, version = "1.0.86", features = ["std"] }
 apache-avro-test-helper = { default-features = false, version = "0.17.0", path = "../avro_test_helper" }
 criterion = { default-features = false, version = "0.5.1" }
 hex-literal = { default-features = false, version = "0.4.1" }
@@ -91,7 +91,7 @@ pretty_assertions = { default-features = false, version = "1.4.0", features = ["
 serial_test = "3.1.1"
 sha2 = { default-features = false, version = "0.10.8" }
 paste = { default-features = false, version = "1.0.15" }
-rstest = { default-features = false, version = "0.19.0" }
+rstest = { default-features = false, version = "0.20.0" }
 
 [package.metadata.docs.rs]
 all-features = true
