@@ -18,4 +18,4 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         with:
           gradle-executable: lang/java/gradle-plugin/gradlew
-          arguments: testCompatibility -PavroVersion=${{ matrix.avro }} -PgradleVersion=${{ matrix.gradle }}
+          arguments: testCompatibility -PavroVersion=${{ matrix.avro }} -PgradleVersion=${{ matrix.gradle }} -project-dir lang/java/gradle-plugin/gradlew
