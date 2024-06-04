@@ -89,4 +89,5 @@ jobs:
       - uses: gradle/gradle-build-action@v2
         continue-on-error: true
         with:
-          arguments: testCompatibility -PavroVersion=${{ matrix.avro }} -PgradleVersion=${{ matrix.gradle }}
+          gradle-executable: lang/java/gradle-plugin/gradlew
+          arguments: testCompatibility -PavroVersion=${{ matrix.avro }} -PgradleVersion=${{ matrix.gradle }} --project-dir lang/java/gradle-plugin
