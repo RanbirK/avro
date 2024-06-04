@@ -12,8 +12,5 @@ jobs:
         java-version: 8
     - uses: gradle/gradle-build-action@v2
       with:
-        arguments: build
-#    - uses: codecov/codecov-action@v1
-#      with:
-#        file: ./build/reports/jacoco/test/jacocoTestReport.xml
-#        fail_ci_if_error: true
+        gradle-executable: lang/java/gradle-plugin/gradlew
+        arguments: build --project-dir lang/java/gradle-plugin
