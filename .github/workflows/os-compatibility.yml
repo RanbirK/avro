@@ -17,4 +17,5 @@ jobs:
     - uses: gradle/gradle-build-action@v2
       with:
         gradle-executable: lang/java/gradle-plugin/gradlew
-        arguments: test --project-dir lang/java/gradle-plugin
+        build-root-directory: lang/java/gradle-plugin
+        arguments: test --stacktrace
