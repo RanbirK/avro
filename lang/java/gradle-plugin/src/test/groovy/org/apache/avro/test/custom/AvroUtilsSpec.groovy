@@ -1,5 +1,6 @@
-package  org.apache.avro
+package org.apache.avro.test.custom
 
+import org.apache.avro.AvroUtils
 import org.apache.avro.Protocol
 import org.apache.avro.Schema
 import spock.lang.Specification

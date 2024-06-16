@@ -1,5 +1,6 @@
-package  org.apache.avro
+package org.apache.avro.test.custom
 
+import org.apache.avro.Strings
 import spock.lang.Specification
 import spock.lang.Subject
 import spock.lang.Unroll

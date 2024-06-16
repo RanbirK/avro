@@ -13,8 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package  org.apache.avro
+package org.apache.avro.test.custom
 
+import org.apache.avro.GenerateAvroProtocolTask
 import spock.lang.Subject
 
 import static org.gradle.testkit.runner.TaskOutcome.SUCCESS

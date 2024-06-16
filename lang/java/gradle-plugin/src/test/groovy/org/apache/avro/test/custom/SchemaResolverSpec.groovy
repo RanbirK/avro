@@ -1,5 +1,6 @@
-package  org.apache.avro
+package org.apache.avro.test.custom
 
+import org.apache.avro.SchemaResolver
 import org.gradle.api.GradleException
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder

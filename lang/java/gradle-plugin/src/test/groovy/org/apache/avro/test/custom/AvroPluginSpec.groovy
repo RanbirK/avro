@@ -13,8 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package  org.apache.avro
+package org.apache.avro.test.custom
 
+import org.apache.avro.AvroPlugin
+import org.apache.avro.Constants
+import org.apache.avro.GenerateAvroJavaTask
+import org.apache.avro.GenerateAvroProtocolTask
+import org.apache.avro.OutputDirTask
 import org.gradle.api.Project
 import org.gradle.testfixtures.ProjectBuilder
 import spock.lang.Specification

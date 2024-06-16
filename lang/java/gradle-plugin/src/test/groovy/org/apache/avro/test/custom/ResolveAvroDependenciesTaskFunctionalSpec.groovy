@@ -1,5 +1,6 @@
-package  org.apache.avro
+package org.apache.avro.test.custom
 
+import org.apache.avro.ResolveAvroDependenciesTask
 import org.hamcrest.MatcherAssert
 import spock.lang.Subject
 import uk.co.datumedge.hamcrest.json.SameJSONAs

@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package  org.apache.avro
+package org.apache.avro.test.custom
 
 import com.vdurmont.semver4j.Semver
+import org.apache.avro.GradleFeatures
 import org.gradle.testkit.runner.BuildResult
 import org.gradle.testkit.runner.GradleRunner
 import org.gradle.util.GradleVersion

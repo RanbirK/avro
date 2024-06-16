@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package  org.apache.avro
+package org.apache.avro.test.custom
 
-import test.java.org.apache.avro.test.custom.CommentGenerator
-import test.java.org.apache.avro.test.custom.TimestampGenerator
+import org.apache.avro.test.custom.CommentGenerator
+import org.apache.avro.test.custom.TimestampGenerator
 import org.apache.avro.compiler.specific.SpecificCompiler.FieldVisibility
 import org.apache.avro.generic.GenericData.StringType
 import spock.lang.Unroll

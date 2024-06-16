@@ -55,7 +55,7 @@ pluginManagement {
 `build.gradle`:
 ```groovy
 plugins {
-    id "com.github.davidmc24.gradle.plugin.avro" version "VERSION"
+    id "org.apache.gradle.plugin.avro" version "VERSION"
 }
 ```
 
@@ -271,8 +271,8 @@ dependencies {
 
 avro {
     conversionsAndTypeFactoriesClasspath.from(configurations.customConversions)
-    logicalTypeFactoryClassNames.put("timezone", "test.java.org.apache.avro.test.custom.TimeZoneLogicalTypeFactory")
-    customConversionClassNames.add("test.java.org.apache.avro.test.custom.TimeZoneConversion")
+    logicalTypeFactoryClassNames.put("timezone", "org.apache.avro.test.custom.TimeZoneLogicalTypeFactory")
+    customConversionClassNames.add("org.apache.avro.test.custom.TimeZoneConversion")
 }
 ```
 
@@ -293,7 +293,7 @@ Here's a short example of what this might look like:
 import main.java.org.apache.avro.GenerateAvroJavaTask
 
 apply plugin: "java"
-apply plugin: "com.github.davidmc24.gradle.plugin.avro-base"
+apply plugin: "org.apache.gradle.plugin.avro-base"
 
 dependencies {
     implementation "org.apache.avro:avro:1.11.0"
@@ -386,7 +386,7 @@ In `gradle.build.kts` add:
 ```kotlin
 plugins {
     // Find latest release here: https://github.com/davidmc24/gradle-avro-plugin/releases
-    id("com.github.davidmc24.gradle.plugin.avro") version "VERSION"
+    id("org.apache.gradle.plugin.avro") version "VERSION"
 }
 ```
 
@@ -426,7 +426,7 @@ Example build:
 ```groovy
 import main.java.org.apache.avro.ResolveAvroDependenciesTask
 
-apply plugin: "com.github.davidmc24.gradle.plugin.avro-base"
+apply plugin: "org.apache.gradle.plugin.avro-base"
 
 tasks.register("resolveAvroDependencies", ResolveAvroDependenciesTask) {
     source file("src/avro/normalized")
@@ -444,10 +444,10 @@ From IDL files, first use `GenerateAvroProtocolTask` to convert the IDL files to
 Example using base plugin with support for both IDL and JSON protocol files in `src/main/avro`:
 
 ```groovy
-import main.java.org.apache.avro.GenerateAvroProtocolTask
-import main.java.org.apache.avro.GenerateAvroSchemaTask
+import org.apache.avro.GenerateAvroProtocolTask
+import org.apache.avro.GenerateAvroSchemaTask
 
-apply plugin: "com.github.davidmc24.gradle.plugin.avro-base"
+apply plugin: "org.apache.gradle.plugin.avro-base"
 
 def generateProtocol = tasks.register("generateProtocol", GenerateAvroProtocolTask) {
     source file("src/main/avro")

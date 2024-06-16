@@ -1,4 +1,4 @@
-package  org.apache.avro
+package org.apache.avro.test.custom
 
 import static org.gradle.testkit.runner.TaskOutcome.SUCCESS
 
