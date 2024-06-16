@@ -1,4 +1,4 @@
-package main.java.org.apache.avro;
+package org.apache.avro;
 
 /**
  * Utility methods for working with {@link String}s.

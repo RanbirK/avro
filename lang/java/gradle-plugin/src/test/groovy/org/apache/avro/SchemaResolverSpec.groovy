@@ -1,4 +1,4 @@
-package test.groovy.org.apache.avro
+package  org.apache.avro
 
 import org.gradle.api.GradleException
 import org.gradle.api.Project

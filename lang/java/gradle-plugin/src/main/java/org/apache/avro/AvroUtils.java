@@ -1,4 +1,4 @@
-package main.java.org.apache.avro;
+package org.apache.avro;
 
 import java.util.ArrayList;
 import java.util.List;

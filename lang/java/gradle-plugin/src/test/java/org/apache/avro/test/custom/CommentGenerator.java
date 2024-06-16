@@ -1,4 +1,4 @@
-package test.java.org.apache.avro.test.custom;
+package org.apache.avro.test.custom;
 
 public class CommentGenerator {
 

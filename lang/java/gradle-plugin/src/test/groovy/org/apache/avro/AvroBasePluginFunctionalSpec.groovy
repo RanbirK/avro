@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package test.groovy.org.apache.avro
+package  org.apache.avro
 
 import test.java.org.apache.avro.test.custom.CommentGenerator
 import test.java.org.apache.avro.test.custom.TimestampGenerator

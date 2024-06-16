@@ -1,4 +1,4 @@
-package test.groovy.org.apache.avro
+package  org.apache.avro
 
 import org.apache.avro.Protocol
 import org.apache.avro.Schema

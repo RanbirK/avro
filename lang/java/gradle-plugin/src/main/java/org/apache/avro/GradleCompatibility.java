@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package main.java.org.apache.avro;
+package org.apache.avro;
 
 import java.io.File;
 import java.lang.reflect.InvocationTargetException;

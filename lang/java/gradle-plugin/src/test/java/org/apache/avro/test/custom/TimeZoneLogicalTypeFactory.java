@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package test.java.org.apache.avro.test.custom;
+package org.apache.avro.test.custom;
 
 import org.apache.avro.LogicalType;
 import org.apache.avro.LogicalTypes;

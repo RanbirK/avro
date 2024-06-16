@@ -1,4 +1,4 @@
-package test.groovy.org.apache.avro
+package  org.apache.avro
 
 import spock.lang.Specification
 import spock.lang.Subject
