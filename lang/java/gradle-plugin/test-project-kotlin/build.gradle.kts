@@ -1,6 +1,6 @@
 plugins {
     id("idea")
-    id("com.github.davidmc24.gradle.plugin.avro") version ("1.2.0")
+    id("org.apache.gradle.plugin.avro") version ("1.2.0")
 //    id "com.github.davidmc24.gradle.plugin.avro" version "1.2.1-SNAPSHOT"
 }
 

@@ -1,9 +1,3 @@
-# Seeking New Maintainer
-
-For more details, see [the discussion](https://github.com/davidmc24/gradle-avro-plugin/discussions/208).
-
-If no new maintainer is found, this project will be archived on October 22, 2023 (the 10 year anniversary of this project's first public commit).
-
 # Overview
 
 This is a [Gradle](http://www.gradle.org/) plugin to allow easily performing Java code generation for [Apache Avro](http://avro.apache.org/).  It supports JSON schema declaration files, JSON protocol declaration files, and Avro IDL files.
@@ -277,8 +271,8 @@ dependencies {
 
 avro {
     conversionsAndTypeFactoriesClasspath.from(configurations.customConversions)
-    logicalTypeFactoryClassNames.put("timezone", "com.github.davidmc24.gradle.plugin.avro.test.custom.TimeZoneLogicalTypeFactory")
-    customConversionClassNames.add("com.github.davidmc24.gradle.plugin.avro.test.custom.TimeZoneConversion")
+    logicalTypeFactoryClassNames.put("timezone", "test.java.org.apache.avro.test.custom.TimeZoneLogicalTypeFactory")
+    customConversionClassNames.add("test.java.org.apache.avro.test.custom.TimeZoneConversion")
 }
 ```
 
@@ -296,7 +290,7 @@ In this case, use the `com.github.davidmc24.gradle.plugin.avro-base` plugin inst
 Here's a short example of what this might look like:
 
 ```groovy
-import com.github.davidmc24.gradle.plugin.avro.GenerateAvroJavaTask
+import main.java.org.apache.avro.GenerateAvroJavaTask
 
 apply plugin: "java"
 apply plugin: "com.github.davidmc24.gradle.plugin.avro-base"
@@ -430,7 +424,7 @@ If desired, you can generate JSON schema with dependencies resolved.
 Example build:
 
 ```groovy
-import com.github.davidmc24.gradle.plugin.avro.ResolveAvroDependenciesTask
+import main.java.org.apache.avro.ResolveAvroDependenciesTask
 
 apply plugin: "com.github.davidmc24.gradle.plugin.avro-base"
 
@@ -450,8 +444,8 @@ From IDL files, first use `GenerateAvroProtocolTask` to convert the IDL files to
 Example using base plugin with support for both IDL and JSON protocol files in `src/main/avro`:
 
 ```groovy
-import com.github.davidmc24.gradle.plugin.avro.GenerateAvroProtocolTask
-import com.github.davidmc24.gradle.plugin.avro.GenerateAvroSchemaTask
+import main.java.org.apache.avro.GenerateAvroProtocolTask
+import main.java.org.apache.avro.GenerateAvroSchemaTask
 
 apply plugin: "com.github.davidmc24.gradle.plugin.avro-base"
 
