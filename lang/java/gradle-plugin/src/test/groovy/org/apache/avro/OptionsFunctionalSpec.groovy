@@ -251,7 +251,7 @@ class OptionsFunctionalSpec extends FunctionalSpec {
         |        classpath files(["${templatesDir.parentFile.toURI()}"])
         |    }
         |}
-        |apply plugin: "com.github.davidmc24.gradle.plugin.avro"
+        |apply plugin: "org.apache.gradle.plugin.avro"
         |avro {
         |    templateDirectory = "/alternateTemplates/"
         |}
@@ -284,11 +284,11 @@ class OptionsFunctionalSpec extends FunctionalSpec {
         |        classpath files(["${templatesDir.parentFile.toURI()}"])
         |    }
         |}
-        |apply plugin: "com.github.davidmc24.gradle.plugin.avro"
+        |apply plugin: "org.apache.gradle.plugin.avro"
         |avro {
         |    templateDirectory = "/alternateTemplates/"
-        |    additionalVelocityToolClasses = ['com.github.davidmc24.gradle.plugin.avro.test.custom.TimestampGenerator',
-        |                                     'com.github.davidmc24.gradle.plugin.avro.test.custom.CommentGenerator']
+        |    additionalVelocityToolClasses = ['org.apache.avro.test.custom.TimestampGenerator',
+        |                                     'org.apache.avro.test.custom.CommentGenerator']
         |}
         |""".stripMargin()
 
@@ -389,8 +389,8 @@ class OptionsFunctionalSpec extends FunctionalSpec {
 
     private void copyAvroTools(String destDir) {
         copyFile("src/test/java", destDir,
-                "com/github/davidmc24/gradle/plugin/avro/test/custom/CommentGenerator.java")
+                "org/apache/avro/test/custom/CommentGenerator.java")
         copyFile("src/test/java", destDir,
-                "com/github/davidmc24/gradle/plugin/avro/test/custom/TimestampGenerator.java")
+                "org/apache/avro/test/custom/TimestampGenerator.java")
     }
 }

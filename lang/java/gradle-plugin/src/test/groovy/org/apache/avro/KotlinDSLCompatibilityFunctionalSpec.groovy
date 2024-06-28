@@ -11,7 +11,7 @@ class KotlinDSLCompatibilityFunctionalSpec extends FunctionalSpec {
         kotlinBuildFile << """
         |plugins {
         |    java
-        |    id("com.github.davidmc24.gradle.plugin.avro")
+        |    id("org.apache.gradle.plugin.avro")
         |}
         |repositories {
         |    mavenCentral()

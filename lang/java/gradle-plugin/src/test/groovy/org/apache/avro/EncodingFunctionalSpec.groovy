@@ -84,7 +84,7 @@ class EncodingFunctionalSpec extends FunctionalSpec {
         |avro {
         |    outputCharacterEncoding = ${outputCharacterEncoding}
         |}
-        |tasks.register("generateAvroJava", com.github.davidmc24.gradle.plugin.avro.GenerateAvroJavaTask) {
+        |tasks.register("generateAvroJava", org.apache.avro.GenerateAvroJavaTask) {
         |    source file("src/main/avro")
         |    include("**/*.avsc")
         |    outputDir = file("build/generated-main-avro-java")

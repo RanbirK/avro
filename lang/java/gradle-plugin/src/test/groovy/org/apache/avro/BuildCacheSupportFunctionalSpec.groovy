@@ -80,7 +80,7 @@ class BuildCacheSupportFunctionalSpec extends FunctionalSpec {
         given: "a project is built once with build cache enabled"
         copyResource("mail.avpr", avroDir)
         buildFile << """
-        |tasks.register("generateSchema", com.github.davidmc24.gradle.plugin.avro.GenerateAvroSchemaTask) {
+        |tasks.register("generateSchema", org.apache.avro.GenerateAvroSchemaTask) {
         |    source file("src/main/avro")
         |    include("**/*.avpr")
         |    outputDir = file("build/generated-main-avro-avsc")

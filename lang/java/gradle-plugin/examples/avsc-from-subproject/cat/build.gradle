@@ -1,7 +1,7 @@
 import java.util.zip.ZipFile
 
 plugins {
-    id "com.github.davidmc24.gradle.plugin.avro" version "1.2.1"
+    id "org.apache.gradle.plugin.avro" version "1.2.1"
 }
 
 repositories {

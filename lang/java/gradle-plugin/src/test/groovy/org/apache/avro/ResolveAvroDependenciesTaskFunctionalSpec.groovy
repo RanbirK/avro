@@ -15,7 +15,7 @@ class ResolveAvroDependenciesTaskFunctionalSpec extends FunctionalSpec {
         given: "a build with the task declared"
         applyAvroBasePlugin()
         buildFile << """
-        |tasks.register("resolveAvroDependencies", com.github.davidmc24.gradle.plugin.avro.ResolveAvroDependenciesTask) {
+        |tasks.register("resolveAvroDependencies", org.apache.avro.ResolveAvroDependenciesTask) {
         |    source file("src/avro/normalized")
         |    outputDir = file("build/avro/resolved")
         |}

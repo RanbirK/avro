@@ -28,7 +28,7 @@ class AvroBasePluginFunctionalSpec extends FunctionalSpec {
     def "can generate java files from json schema"() {
         given:
         buildFile << """
-        |tasks.register("generateAvroJava", com.github.davidmc24.gradle.plugin.avro.GenerateAvroJavaTask) {
+        |tasks.register("generateAvroJava", org.apache.avro.GenerateAvroJavaTask) {
         |    source file("src/main/avro")
         |    include("**/*.avsc")
         |    outputDir = file("build/generated-main-avro-java")
@@ -48,7 +48,7 @@ class AvroBasePluginFunctionalSpec extends FunctionalSpec {
     def "can generate json schema files from json protocol"() {
         given:
         buildFile << """
-        |tasks.register("generateSchema", com.github.davidmc24.gradle.plugin.avro.GenerateAvroSchemaTask) {
+        |tasks.register("generateSchema", org.apache.avro.GenerateAvroSchemaTask) {
         |    source file("src/main/avro")
         |    include("**/*.avpr")
         |    outputDir = file("build/generated-main-avro-avsc")
@@ -70,11 +70,11 @@ class AvroBasePluginFunctionalSpec extends FunctionalSpec {
     def "can generate json schema files from IDL"() {
         given:
         buildFile << """
-        |tasks.register("generateProtocol", com.github.davidmc24.gradle.plugin.avro.GenerateAvroProtocolTask) {
+        |tasks.register("generateProtocol", org.apache.avro.GenerateAvroProtocolTask) {
         |    source file("src/main/avro")
         |    outputDir = file("build/generated-avro-main-avpr")
         |}
-        |tasks.register("generateSchema", com.github.davidmc24.gradle.plugin.avro.GenerateAvroSchemaTask) {
+        |tasks.register("generateSchema", org.apache.avro.GenerateAvroSchemaTask) {
         |    dependsOn generateProtocol
         |    source file("build/generated-avro-main-avpr")
         |    include("**/*.avpr")
@@ -99,12 +99,12 @@ class AvroBasePluginFunctionalSpec extends FunctionalSpec {
     def "example of converting both IDL and json protocol simultaneously"() {
         given:
         buildFile << """
-        |tasks.register("generateProtocol", com.github.davidmc24.gradle.plugin.avro.GenerateAvroProtocolTask) {
+        |tasks.register("generateProtocol", org.apache.avro.GenerateAvroProtocolTask) {
         |    source file("src/main/avro")
         |    include("**/*.avdl")
         |    outputDir = file("build/generated-avro-main-avpr")
         |}
-        |tasks.register("generateSchema", com.github.davidmc24.gradle.plugin.avro.GenerateAvroSchemaTask) {
+        |tasks.register("generateSchema", org.apache.avro.GenerateAvroSchemaTask) {
         |    dependsOn generateProtocol
         |    source file("src/main/avro")
         |    source file("build/generated-avro-main-avpr")
@@ -139,15 +139,15 @@ class AvroBasePluginFunctionalSpec extends FunctionalSpec {
         buildFile << """
         |avro {
         |    templateDirectory = "${templatesDir.toString().replace('\\', '\\\\')}/"
-        |    additionalVelocityToolClasses = ['com.github.davidmc24.gradle.plugin.avro.test.custom.TimestampGenerator',
-        |                                     'com.github.davidmc24.gradle.plugin.avro.test.custom.CommentGenerator']
+        |    additionalVelocityToolClasses = ['org.apache.avro.test.custom.TimestampGenerator',
+        |                                     'org.apache.avro.test.custom.CommentGenerator']
         |}
         |tasks.register("compileTools", JavaCompile) {
         |   source = sourceSets.main.java
         |   classpath = sourceSets.main.compileClasspath
         |   destinationDir = file("build/classes/java/main")
         |}
-        |tasks.register("generateAvro", com.github.davidmc24.gradle.plugin.avro.GenerateAvroJavaTask) {
+        |tasks.register("generateAvro", org.apache.avro.GenerateAvroJavaTask) {
         |    dependsOn compileTools
         |    classpath = files("build/classes/java/main")
         |    source file("src/main/avro")
@@ -170,8 +170,8 @@ class AvroBasePluginFunctionalSpec extends FunctionalSpec {
 
     private void copyAvroTools(String destDir) {
         copyFile("src/test/java", destDir,
-            "com/github/davidmc24/gradle/plugin/avro/test/custom/CommentGenerator.java")
+            "org/apache/avro/test/custom/CommentGenerator.java")
         copyFile("src/test/java", destDir,
-            "com/github/davidmc24/gradle/plugin/avro/test/custom/TimestampGenerator.java")
+            "org/apache/avro/test/custom/TimestampGenerator.java")
     }
 }

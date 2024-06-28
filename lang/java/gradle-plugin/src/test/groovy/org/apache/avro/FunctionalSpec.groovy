@@ -67,11 +67,11 @@ abstract class FunctionalSpec extends Specification {
     }
 
     protected void applyAvroPlugin() {
-        applyPlugin("com.github.davidmc24.gradle.plugin.avro")
+        applyPlugin("org.apache.gradle.plugin.avro")
     }
 
     protected void applyAvroBasePlugin() {
-        applyPlugin("com.github.davidmc24.gradle.plugin.avro-base")
+        applyPlugin("org.apache.gradle.plugin.avro-base")
     }
 
     protected void applyPlugin(String pluginId) {

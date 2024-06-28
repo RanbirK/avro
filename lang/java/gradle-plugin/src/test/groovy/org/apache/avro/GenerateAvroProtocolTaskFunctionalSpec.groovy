@@ -34,7 +34,7 @@ class GenerateAvroProtocolTaskFunctionalSpec extends FunctionalSpec {
         |dependencies {
         |    shared sharedIdlJar.outputs.files  
         |}
-        |tasks.register("generateProtocol", com.github.davidmc24.gradle.plugin.avro.GenerateAvroProtocolTask) {
+        |tasks.register("generateProtocol", org.apache.avro.GenerateAvroProtocolTask) {
         |    classpath = configurations.shared
         |    source file("src/dependent")
         |    outputDir = file("build/protocol")

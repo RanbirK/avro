@@ -109,7 +109,7 @@ class SchemaResolverSpec extends Specification {
     def "Duplicate record definition succeeds if definition identical"() {
         given:
         def resourceNames = ["Person.avsc", "Fish.avsc"]
-        def files = resourceNames.collect { new File("src/test/resources/com/github/davidmc24/gradle/plugin/avro/duplicate/${it}") }
+        def files = resourceNames.collect { new File("org/apache/avro/duplicate/${it}") }
 
         when:
         def processingState = resolver.resolve(files)
@@ -123,7 +123,7 @@ class SchemaResolverSpec extends Specification {
     def "Duplicate enum definition succeeds if definition identical"() {
         given:
         def resourceNames = ["Person.avsc", "Cat.avsc"]
-        def files = resourceNames.collect { new File("src/test/resources/com/github/davidmc24/gradle/plugin/avro/duplicate/${it}") }
+        def files = resourceNames.collect { new File("org/apache/avro/duplicate/${it}") }
 
         when:
         def processingState = resolver.resolve(files)
@@ -137,7 +137,7 @@ class SchemaResolverSpec extends Specification {
     def "Duplicate fixed definition succeeds if definition identical"() {
         given:
         def resourceNames = ["ContainsFixed1.avsc", "ContainsFixed2.avsc"]
-        def files = resourceNames.collect { new File("src/test/resources/com/github/davidmc24/gradle/plugin/avro/duplicate/${it}") }
+        def files = resourceNames.collect { new File("src/test/resources/org/apache/avro/duplicate/${it}") }
 
         when:
         def processingState = resolver.resolve(files)
@@ -151,7 +151,7 @@ class SchemaResolverSpec extends Specification {
     def "Duplicate record definition fails if definition differs"() {
         given:
         def resourceNames = ["Person.avsc", "Spider.avsc"]
-        def files = resourceNames.collect { new File("src/test/resources/com/github/davidmc24/gradle/plugin/avro/duplicate/${it}") }
+        def files = resourceNames.collect { new File("src/test/resources/org/apache/avro/duplicate/${it}") }
 
         when:
         resolver.resolve(files)
@@ -164,7 +164,7 @@ class SchemaResolverSpec extends Specification {
     def "Duplicate enum definition fails if definition differs"() {
         given:
         def resourceNames = ["Dog.avsc", "Person.avsc"]
-        def files = resourceNames.collect { new File("src/test/resources/com/github/davidmc24/gradle/plugin/avro/duplicate/${it}") }
+        def files = resourceNames.collect { new File("src/test/resources/org/apache/avro/duplicate/${it}") }
 
         when:
         resolver.resolve(files)
@@ -177,7 +177,7 @@ class SchemaResolverSpec extends Specification {
     def "Duplicate fixed definition fails if definition differs"() {
         given:
         def resourceNames = ["ContainsFixed1.avsc", "ContainsFixed3.avsc"]
-        def files = resourceNames.collect { new File("src/test/resources/com/github/davidmc24/gradle/plugin/avro/duplicate/${it}") }
+        def files = resourceNames.collect { new File("src/test/resources/org/apache/avro/duplicate/${it}") }
 
         when:
         resolver.resolve(files)
@@ -189,7 +189,7 @@ class SchemaResolverSpec extends Specification {
 
     def "Duplicate record definition in single file fails with clear error"() {
         given:
-        def file = new File("src/test/resources/com/github/davidmc24/gradle/plugin/avro/duplicate/duplicateInSingleFile.avsc")
+        def file = new File("src/test/resources/org/apache/avro/duplicate/duplicateInSingleFile.avsc")
 
         when:
         resolver.resolve([file])
