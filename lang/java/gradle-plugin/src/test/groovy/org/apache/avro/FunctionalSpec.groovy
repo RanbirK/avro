@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.apache.avro.test.custom
+package org.apache.avro
 
 import com.vdurmont.semver4j.Semver
 import org.apache.avro.GradleFeatures

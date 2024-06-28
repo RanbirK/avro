@@ -1,4 +1,4 @@
-package org.apache.avro.test.custom
+package org.apache.avro
 
 import org.apache.avro.SchemaResolver
 import org.gradle.api.GradleException

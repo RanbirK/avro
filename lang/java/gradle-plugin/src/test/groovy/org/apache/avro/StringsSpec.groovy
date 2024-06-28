@@ -1,4 +1,4 @@
-package org.apache.avro.test.custom
+package org.apache.avro
 
 import org.apache.avro.Strings
 import spock.lang.Specification
