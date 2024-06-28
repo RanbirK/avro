@@ -20,11 +20,11 @@ import static org.gradle.testkit.runner.TaskOutcome.SUCCESS
 class CustomConversionFunctionalSpec extends FunctionalSpec {
     private void copyCustomConversion(String destDir) {
         copyFile("src/test/java", destDir,
-            "com/github/davidmc24/gradle/plugin/avro/test/custom/TimeZoneConversion.java")
+            "org/apache/avro/test/custom/TimeZoneConversion.java")
         copyFile("src/test/java", destDir,
-            "com/github/davidmc24/gradle/plugin/avro/test/custom/TimeZoneLogicalType.java")
+            "org/apache/avro/test/custom/TimeZoneLogicalType.java")
         copyFile("src/test/java", destDir,
-            "com/github/davidmc24/gradle/plugin/avro/test/custom/TimeZoneLogicalTypeFactory.java")
+            "org/apache/avro/test/custom/TimeZoneLogicalTypeFactory.java")
     }
 
     def "can use a custom conversion when generating java from a schema with stringType = \"String\""() {
@@ -41,8 +41,8 @@ class CustomConversionFunctionalSpec extends FunctionalSpec {
         |        classpath files(${readPluginClasspath()})
         |    }
         |}
-        |apply plugin: "com.github.davidmc24.gradle.plugin.avro"
-        |import com.github.davidmc24.gradle.plugin.avro.test.custom.*
+        |apply plugin: "org.apache.gradle.plugin.avro"
+        |import org.apache.avro.test.custom.*
         |avro {
         |    stringType = "String"
         |    logicalTypeFactory("timezone", TimeZoneLogicalTypeFactory)
@@ -87,8 +87,8 @@ class CustomConversionFunctionalSpec extends FunctionalSpec {
         |        classpath files(${readPluginClasspath()})
         |    }
         |}
-        |apply plugin: "com.github.davidmc24.gradle.plugin.avro"
-        |import com.github.davidmc24.gradle.plugin.avro.test.custom.*
+        |apply plugin: "org.apache.gradle.plugin.avro"
+        |import org.apache.avro.test.custom.*
         |avro {
         |    stringType = "CharSequence"
         |    logicalTypeFactory("timezone", TimeZoneLogicalTypeFactory)
@@ -133,8 +133,8 @@ class CustomConversionFunctionalSpec extends FunctionalSpec {
         |        classpath files(${readPluginClasspath()})
         |    }
         |}
-        |apply plugin: "com.github.davidmc24.gradle.plugin.avro"
-        |import com.github.davidmc24.gradle.plugin.avro.test.custom.*
+        |apply plugin: "org.apache.gradle.plugin.avro"
+        |import org.apache.avro.test.custom.*
         |avro {
         |    stringType = "CharSequence"
         |    logicalTypeFactory("timezone", TimeZoneLogicalTypeFactory)
@@ -181,8 +181,8 @@ class CustomConversionFunctionalSpec extends FunctionalSpec {
         |avro {
         |    stringType = "CharSequence"
         |    conversionsAndTypeFactoriesClasspath.from(configurations.customConversions)
-        |    logicalTypeFactory("timezone", "com.github.davidmc24.gradle.plugin.avro.test.custom.TimeZoneLogicalTypeFactory")
-        |    customConversion("com.github.davidmc24.gradle.plugin.avro.test.custom.TimeZoneConversion")
+        |    logicalTypeFactory("timezone", "org.apache.avro.test.custom.TimeZoneLogicalTypeFactory")
+        |    customConversion("org.apache.avro.test.custom.TimeZoneConversion")
         |}
         |""".stripMargin()
         addDefaultRepository()
@@ -220,7 +220,7 @@ class CustomConversionFunctionalSpec extends FunctionalSpec {
         copyResource("customConversion.avpr", avroDir)
         applyAvroPlugin()
         buildFile << """
-        |tasks.register("generateSchema", com.github.davidmc24.gradle.plugin.avro.GenerateAvroSchemaTask) {
+        |tasks.register("generateSchema", org.apache.avro.GenerateAvroSchemaTask) {
         |    source file("src/main/avro")
         |    include("**/*.avpr")
         |    outputDir = file("build/generated-main-avro-avsc")
