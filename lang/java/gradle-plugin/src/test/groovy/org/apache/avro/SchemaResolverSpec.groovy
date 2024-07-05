@@ -109,7 +109,7 @@ class SchemaResolverSpec extends Specification {
     def "Duplicate record definition succeeds if definition identical"() {
         given:
         def resourceNames = ["Person.avsc", "Fish.avsc"]
-        def files = resourceNames.collect { new File("org/apache/avro/duplicate/${it}") }
+        def files = resourceNames.collect { new File("src/test/resources/org/apache/avro/duplicate/${it}") }
 
         when:
         def processingState = resolver.resolve(files)
